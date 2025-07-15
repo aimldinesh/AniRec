@@ -9,3 +9,4 @@ wordcloud
 joblib
 comet-ml
 dvc
+dvc-gs
