@@ -1,0 +1,13 @@
+2025-07-14 10:59:14,887 - INFO - DataProcessing Initialized
+2025-07-14 10:59:17,961 - INFO - Data loaded successfully for processing
+2025-07-14 10:59:18,406 - INFO - Filtered users successfully
+2025-07-14 10:59:21,062 - INFO - Rating scaling completed
+2025-07-14 10:59:22,193 - INFO - Encoding completed for users and animes
+2025-07-14 10:59:25,657 - INFO - Data split into training and test sets
+2025-07-14 10:59:25,805 - INFO - user2user_encoded saved successfully
+2025-07-14 10:59:25,945 - INFO - user2user_decoded saved successfully
+2025-07-14 10:59:26,115 - INFO - anim2anime_encoded saved successfully
+2025-07-14 10:59:26,448 - INFO - anim2anime_decoded saved successfully
+2025-07-14 10:59:40,567 - INFO - Training, testing data, and rating_df saved successfully
+2025-07-14 11:00:17,946 - INFO - Anime and synopsis data saved successfully
+2025-07-14 11:00:17,956 - INFO - \u2705 Data processing pipeline completed

@@ -1,0 +1,12 @@
+data_ingestion:
+  bucket_name: "anirec_project"  # Name of the cloud storage bucket
+  bucket_file_names:
+    - "anime.csv"                # Anime metadata file
+    - "anime_with_synopsis.csv" # Anime synopsis file
+    - "animelist.csv"           # User-anime interaction (ratings) file
+
+model:
+  embedding_size: 128               # Size of embedding vectors for users and animes
+  loss: binary_crossentropy         # Loss function used for training (good for ratings scaled 0–1)
+  optimizer: Adam                   # Optimizer for training the model
+  metrics: ["mae","mse"]            # Evaluation metrics: Mean Absolute Error & Mean Squared Error
