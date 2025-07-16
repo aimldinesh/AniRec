@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AniRec - Personalized Anime Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Dark mode toggle button -->
+    <button class="toggle-dark" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+    <div class="container">
+        <h1>🎬 AniRec: Personalized Anime Recommendations</h1>
+
+        <!-- Input Form -->
+        <form method="POST" class="form">
+            <label for="userID">🔢 Enter Your User ID:</label>
+            <input type="number" id="userID" name="userID" required placeholder="e.g. 10123" />
+            <button type="submit">🎯 Get Recommendations</button>
+        </form>
+
+        <!-- Error Handling -->
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <!-- Recommendation Results -->
+        {% if recommendations %}
+            <div class="results">
+                <h2>✨ Recommended Anime:</h2>
+                <ul>
+                    {% for anime in recommendations %}
+                        <li>
+                            🎬 {{ anime }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- JS for Dark Mode -->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
+</html>

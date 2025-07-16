@@ -1,0 +1,156 @@
+:root {
+    --bg-color: #fefefe;
+    --text-color: #333;
+    --box-color: #ffffff;
+    --input-bg: #fff;
+    --item-bg: #f2f2f2;
+    --btn-bg: #3498db;
+    --btn-hover: #2c80b4;
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --box-color: #1f1f1f;
+    --input-bg: #2a2a2a;
+    --item-bg: #2e2e2e;
+    --btn-bg: #5b8dee;
+    --btn-hover: #3b6bd1;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: var(--box-color);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 30px 40px;
+    transition: background-color 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    background-color: var(--input-bg);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: var(--btn-bg);
+}
+
+button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: var(--btn-bg);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--btn-hover);
+}
+
+.results {
+    margin-top: 30px;
+}
+
+.results h2 {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.results ul {
+    list-style: none;
+    padding: 0;
+}
+
+.results li {
+    background: var(--item-bg);
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 1.6;
+    transition: background 0.3s ease;
+}
+
+.error {
+    color: #e74c3c;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.toggle-dark {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: 2px solid var(--btn-bg);
+    border-radius: 25px;
+    color: var(--btn-bg);
+    font-weight: bold;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-dark:hover {
+    background-color: var(--btn-bg);
+    color: white;
+}
+
+/* ✅ Responsive Design */
+@media screen and (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    button,
+    input[type="number"] {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .toggle-dark {
+        top: 10px;
+        right: 15px;
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+}
