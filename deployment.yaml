@@ -1,0 +1,37 @@
+# 🐳 Deployment for Flask App
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ml-app
+  labels:
+    app: ml-app
+spec:
+  replicas: 2  # Number of pods to run
+  selector:
+    matchLabels:
+      app: ml-app
+  template:
+    metadata:
+      labels:
+        app: ml-app
+    spec:
+      containers:
+        - name: ml-app-container
+          image: gcr.io/mlops-project-462105/ml-project:latest  # Replace with your GCR image
+          ports:
+            - containerPort: 5000  # Flask app listens on port 5000
+          imagePullPolicy: Always  # Ensures latest image is pulled on every deploy
+---
+# 🌐 Expose the app via LoadBalancer Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: ml-app-service
+spec:
+  type: LoadBalancer  # Creates an external IP for accessing the app
+  selector:
+    app: ml-app
+  ports:
+    - protocol: TCP
+      port: 80           # Exposed port on the LoadBalancer
+      targetPort: 5000   # Port inside the container (Flask)
