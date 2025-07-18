@@ -15,8 +15,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# ✅ Copy all application files into the container
-COPY . .
+COPY requirements.txt .   
+COPY pipeline/ ./pipeline/
+COPY app.py .
+
 
 # ✅ Install Python packages in editable mode (supports live updates during development)
 RUN pip install --no-cache-dir -e .
