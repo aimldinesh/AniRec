@@ -22,7 +22,7 @@ WORKDIR /app
 COPY . .
 
 # Install dependencies from requirements.txt
-RUN pip install --no-cache-dir -e .
+RUN pip install -e .
 
 # Train the model before running the application
 RUN python pipeline/training_pipeline.py
