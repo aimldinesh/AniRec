@@ -1,14 +1,44 @@
+# 🐍 Python cache files
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.log
-*.DS_Store
-*.egg-info/
+*.py[cod]
+*$py.class
+
+# 🚫 Virtual environments and environment files
+venv/
 .env
-.venv/
-.vscode/
+*.env
+
+# 📓 Jupyter notebooks & checkpoints (not needed in production)
 .ipynb_checkpoints/
 notebook/
-data/
+
+# Exclude training-only artifacts
+artifacts/raw/
+
+# 🗑 Logs
+*.log
+logs/
+
+# 🧱 Build metadata
+*.egg-info/
+build/
+dist/
+*.tar.gz
+
+# ⚙️ DVC internals (keep .dvc/ but exclude heavy cache/tmp)
 .dvc/cache/
+.dvc/tmp/
+
+# 🧠 Bytecode cache
+config/__pycache__/
+src/__pycache__/
+utils/__pycache__/
+pipeline/__pycache__/
+
+# 🖥 IDE/OS clutter
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 🧪 Jenkins CI scripts (not needed in image)
+custom_jenkins/
