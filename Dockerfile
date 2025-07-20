@@ -26,6 +26,10 @@ COPY . .
 # Install Python dependencies (editable if setup.py present)
 RUN pip install --no-cache-dir -e .
 
+# ✅ Train the model before starting the Flask app
+# Ensures the latest model is available when the container starts
+RUN python pipeline/training_pipeline.py
+
 # Expose the port Flask runs on
 EXPOSE 5000
 
