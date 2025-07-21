@@ -144,7 +144,30 @@ docker run -p 5000:5000 anirec-app
 
 ```
 ---
-## 📸 Screenshots
+## 📸 Project Screenshots
+
+### 🚀 Jenkins CI/CD Pipeline Execution
+- Jenkins pipeline build started  
+  ![Jenkins Build Start](https://github.com/aimldinesh/AniRec/blob/main/screenshots/Jenkins_CICD%20Pipeline%20_Execution/Jenkins_pipeline_build_start.PNG)
+
+- Jenkins pipeline build succeeded  
+  ![Jenkins Build Success](https://github.com/aimldinesh/AniRec/blob/main/screenshots/Jenkins_CICD%20Pipeline%20_Execution/Jenkins_pipeline_build_success.PNG)
+
+---
+
+### ☁️ AniRec Web App Running on GCP
+- Active Revisions, Managed Pods, and Exposing Services  
+  ![GCP Deployment Details](https://github.com/aimldinesh/AniRec/blob/main/screenshots/AniRec%20_Web%20App%20_Running%20_on%20_GCP/AniRec_Web_App_Running_on%20_GCP_Active%20revisions_Managed%20pods_Exposing%20services.png)
+
+---
+
+### 🎨 AniRec Web App UI
+- Anime Recommendation App – UI Page 1  
+  ![Web UI 1](https://github.com/aimldinesh/AniRec/blob/main/screenshots/App_ui/deploy_app_ui_using_gcp_1.PNG)
+
+- Anime Recommendation App – UI Page 2  
+  ![Web UI 2](https://github.com/aimldinesh/AniRec/blob/main/screenshots/App_ui/deploy_app_ui_using_gcp_2.png)
+
 ---
 
 ## 📦 Future Improvements
