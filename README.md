@@ -27,7 +27,6 @@ graph TD
     G --> H[📊 Experiment Tracking<br>Comet-ML]
     H --> I[🚀 Training Pipeline]
     I --> J[📦 Data & Code Versioning<br>DVC + GitHub]
-    J --> K[🧠 Prediction Helper Function]
     K --> L[🌐 User App Flask<br>Prediction Pipeline]
     L --> M[⚙️ CI/CD with Jenkins & Kubernetes<br>Deployment on GCP]
 
