@@ -9,14 +9,6 @@ AniRec is a full-scale end-to-end **Anime Recommendation System** that combines 
 
 ---
 
-## 📸 Project Screenshots
-
-| Home Page | Recommendations | Hybrid Output |
-|-----------|------------------|----------------|
-| ![Home](assets/home.png) | ![Reco](assets/recommend.png) | ![Hybrid](assets/hybrid.png) |
-
----
-
 ## 🚀 Key Features
 
 - 🔍 **Content-Based Filtering** using genres and synopsis embeddings
@@ -30,4 +22,21 @@ AniRec is a full-scale end-to-end **Anime Recommendation System** that combines 
 ---
 
 ## 🧱 Project Architecture
+```mermaid
+graph TD
+    A[📂 Database Setup<br>GCP Bucket] --> B[⚙️ Project Setup]
+    B --> C[🛢️ Data Ingestion<br>via GCP]
+    C --> D[📓 Jupyter Notebook Testing]
+    D --> E[🧹 Data Processing]
+    E --> F[🏗️ Model Architecture]
+    F --> G[🧠 Model Training]
+    G --> H[📊 Experiment Tracking<br>Comet-ML]
+    H --> I[🚀 Training Pipeline]
+    I --> J[📦 Data & Code Versioning<br>DVC + GitHub]
+    J --> K[🧠 Prediction Helper Function]
+    K --> L[🌐 User App Flask<br>Prediction Pipeline]
+    L --> M[⚙️ CI/CD with Jenkins & Kubernetes<br>Deployment on GCP]
 
+
+
+```
