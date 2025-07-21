@@ -150,5 +150,10 @@ docker build -t anirec-app .
 docker run -p 5000:5000 anirec-app
 
 ```
-
+---
+📦 Future Improvements
+- Integrate user login and personalized dashboards.
+- Incorporate NLP-based synopsis analysis for improved content similarity.
+- Use embeddings from models like BERT or Sentence Transformers.
+- Deploy with auto-scaling via GKE Ingress and HPA.
 
