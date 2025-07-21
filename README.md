@@ -48,39 +48,59 @@ graph TD
 ### 2. ⚙️ Project Setup
 - Structured codebase with modular components and dependencies
 
-### 3. ☁️ Data Ingestion
-- Loaded and validated datasets from GCP bucket
+### 3. 📥 DATA INGESTION (via GCP Bucket) 
+- Raw datasets (`anime.csv`, `anime_with_synopsis.csv`, `animelist.csv`) stored in a Google Cloud Storage bucket.
+- Ingested using Python scripts directly from GCS into the pipeline.
 
 ### 4. 📒 Jupyter Notebook Testing
-- Prototyped recommender logic, EDA, embeddings, similarity scores
+- Conducted EDA, preprocessing, and recommendation logic development in notebooks.
+- Tested multiple recommendation strategies:
+    - Content-based filtering
+    - Collaborative filtering
+    - Hybrid approach
 
 ### 5. 🧹 Data Processing
-- Cleaned anime metadata, extracted synopsis, encoded genres
+- Cleaned anime metadata and user ratings.
+- Merged multiple datasets (anime.csv, anime_with_synopsis.csv, animelist.csv).
+- Extracted text features (synopsis) and encoded categorical features.
 
 ### 6. 🧠 Model Architecture
 - Developed content-based, collaborative, and hybrid models
 
 ### 7. 🎯 Model Training
-- Optimized embedding and similarity models using rating data
+- Trained models to learn user preferences and anime embeddings.
+- Optimized using metrics like RMSE and ranking-based evaluations.
 
 ### 8. 📊 Experiment Tracking
 - Used **Comet-ML** for logging metrics, hyperparameters, and artifacts
 
 ### 9. 🔁 Training Pipeline
-- Modular pipeline with reusable steps for ingestion → training → logging
+- Modular training pipeline to automate:
+   - Data loading and preprocessing
+   - Model training and saving
+   - Logging artifacts and metrics
 
 ### 10. 📦 Data & Code Versioning
-- Used **DVC** to version datasets/models and **GitHub** for code
+- Used DVC (Data Version Control) to version datasets and models.
+- Managed code versions and CI logs with GitHub.
 
 ### 11. 🧩 Prediction Helper Functions
-- Built modular functions for generating personalized recommendations
+- Built reusable prediction utilities to:
+   - Recommend anime by user ID
+   - Recommend similar anime by name
+   - Combine content + collaborative recommendations
 
 ### 12. 🌐 User App with Prediction Pipeline
-- Built using **Flask** to interface with the backend recommender
+- Developed a Flask web application to:
+   - Accept user inputs (user_id)
+   - Display personalized recommendations with titles and genres
+   - Call backend prediction functions via HTTP
 
 ### 13. 🚀 CI/CD Deployment
-- Containerized using **Docker**
-- Deployed via **Kubernetes on GCP** using **Jenkins CI/CD**
+- Built production-ready pipeline using:
+   - Jenkins for automated CI/CD
+   - Docker for containerization
+   - Kubernetes on GCP for scalable deployment
 
 ---
 
