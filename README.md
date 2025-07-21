@@ -151,7 +151,10 @@ docker run -p 5000:5000 anirec-app
 
 ```
 ---
-📦 Future Improvements
+## 📸 Screenshots
+---
+
+## 📦 Future Improvements
 - Integrate user login and personalized dashboards.
 - Incorporate NLP-based synopsis analysis for improved content similarity.
 - Use embeddings from models like BERT or Sentence Transformers.
