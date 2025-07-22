@@ -12,9 +12,8 @@ AniRec is a full-scale end-to-end **Anime Recommendation System** that combines 
 
 ---
 ## 📑 Table of Contents
-
-* [🚀 Key Features](#-key-features)
 * [🧱 Project Architecture](#-project-architecture)
+* [🚀 Key Features](#-key-features)
 * [🛠️ Project Workflow](#️-project-workflow)
   * [1. 📦 Database Setup](#1--database-setup)
   * [2. ⚙️ Project Setup](#2--project-setup)
@@ -39,19 +38,6 @@ AniRec is a full-scale end-to-end **Anime Recommendation System** that combines 
 * [🤝 Contributors](#-contributors)
 
 ---
-
-## 🚀 Key Features
-
-- 🔍 **Content-Based Filtering** using genres and synopsis embeddings
-- 👥 **Collaborative Filtering** using user-anime interaction embeddings
-- 🤝 **Hybrid Recommender** that combines both strategies
-- 📊 **Experiment Tracking** using **Comet-ML**
-- 📦 **Data and Model Versioning** using **DVC**
-- 🔧 **CI/CD Pipeline** using **Jenkins + Kubernetes**
-- 🌐 **Web App Interface** using **Flask**
-
----
-
 ## 🧱 Project Architecture
 ```mermaid
 graph TD
@@ -66,8 +52,19 @@ graph TD
     I --> J[📦 Data & Code Versioning<br>DVC + GitHub]
     J --> K[🌐 User App Flask<br>Prediction Pipeline]
     K --> L[⚙️ CI/CD with Jenkins & Kubernetes<br>Deployment on GCP]
-
 ```
+---
+
+## 🚀 Key Features
+
+- 🔍 **Content-Based Filtering** using genres and synopsis embeddings
+- 👥 **Collaborative Filtering** using user-anime interaction embeddings
+- 🤝 **Hybrid Recommender** that combines both strategies
+- 📊 **Experiment Tracking** using **Comet-ML**
+- 📦 **Data and Model Versioning** using **DVC**
+- 🔧 **CI/CD Pipeline** using **Jenkins + Kubernetes**
+- 🌐 **Web App Interface** using **Flask**
+
 ---
 
 ## 🛠️ Project Workflow
