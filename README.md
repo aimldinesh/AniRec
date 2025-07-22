@@ -222,4 +222,4 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 ## 🤝 Contributors
-- [Dinesh Chaudhary](https://github.com/your-github)
+- [Dinesh Chaudhary](https://github.com/aimldinesh)
