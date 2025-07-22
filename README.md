@@ -78,7 +78,7 @@ graph TD
 ### 2. ⚙️ Project Setup
 - Structured codebase with modular components and dependencies
 
-### 3. 📥 DATA INGESTION (via GCP Bucket) 
+### 3. 📥 Data Ingestion (via GCP Bucket) 
 - Raw datasets (`anime.csv`, `anime_with_synopsis.csv`, `animelist.csv`) stored in a Google Cloud Storage bucket.
 - Ingested using Python scripts directly from GCS into the pipeline.
 
