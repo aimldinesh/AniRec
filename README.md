@@ -94,9 +94,13 @@ graph TD
 ### 6. 🧠 Model Architecture
 - Developed content-based, collaborative, and hybrid models
 
-### 7. 🎯 Model Training
-- Trained models to learn user preferences and anime embeddings.
-- Optimized using metrics like RMSE and ranking-based evaluations.
+### 7. 🎯 Model Training  
+- Trained machine learning models using anime-user interaction data to capture preferences and generate recommendations.
+   - Implemented a **Collaborative Filtering** approach using cosine similarity on user-anime rating matrix.
+   - Preprocessed the interaction matrix by filling missing values with zeros and normalizing scores.
+   - Encoded anime and user IDs, then computed similarity-based embeddings.
+   - Evaluated recommendation quality using **RMSE** and cosine similarity metrics.
+   - Saved trained model artifacts and associated encoders for inference integration in the prediction pipeline.
 
 ### 8. 📊 Experiment Tracking
 - Used **Comet-ML** for logging metrics, hyperparameters, and artifacts
