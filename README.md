@@ -76,8 +76,13 @@ graph TD
 - Structured codebase with modular components and dependencies
 
 ### 3. 📥 Data Ingestion (via GCP Bucket) 
-- Raw datasets (`anime.csv`, `anime_with_synopsis.csv`, `animelist.csv`) stored in a Google Cloud Storage bucket.
-- Ingested using Python scripts directly from GCS into the pipeline.
+4. 📥 Data Ingestion  
+- Fetched raw dataset files from a Google Cloud Storage bucket using the `google-cloud-storage` Python SDK.
+     - Handled 3 CSV files: `anime.csv`, `anime_with_synopsis.csv`, and `animelist.csv`.
+     - For the large `animelist.csv` (6M+ records), only the first 5 million rows were downloaded to optimize memory usage.
+     - Created a structured ingestion class (`DataIngestion`) to automate downloading, saving, and logging each step.
+     - Ensured idempotent design by creating required local folders (`RAW_DIR`) if not present.
+     - Config-driven setup using a YAML file to load the bucket name and file list.
 
 ### 4. 📒 Jupyter Notebook Testing
 - Conducted EDA, preprocessing, and recommendation logic development in notebooks.
@@ -87,20 +92,49 @@ graph TD
     - Hybrid approach
 
 ### 5. 🧹 Data Processing
-- Cleaned anime metadata and user ratings.
-- Merged multiple datasets (anime.csv, anime_with_synopsis.csv, animelist.csv).
-- Extracted text features (synopsis) and encoded categorical features.
+- Preprocessed and transformed the ingested data to prepare it for collaborative filtering model training:
+    - ✅ Loaded raw animelist.csv with selective columns: user_id, anime_id, and rating.
+    - 👥 Filtered users with fewer than 400 ratings to reduce sparsity.
+    - 📏 Scaled all ratings between 0 and 1 using Min-Max normalization.
+    - 🔢 Encoded user_id and anime_id into integer indices for use with embedding layers.
+    - 🔄 Shuffled and split data into training and testing sets (last 1000 for test).
+    - 💾 Saved encoded mappings, training/testing arrays, and full rating DataFrame to disk using joblib.
+    - 🧹 Cleaned anime metadata and synopsis data, handling missing values and saving curated files for downstream use.
 
 ### 6. 🧠 Model Architecture
-- Developed content-based, collaborative, and hybrid models
+
+- The recommendation engine is built using a neural collaborative filtering approach with dot-product interaction.
+    - Built with TensorFlow/Keras using the Functional API.
+    - Uses **embedding layers** for both users and anime to learn dense vector representations.
+    - Performs a **dot product** between user and anime embeddings to capture interaction strength.
+    - The architecture includes:
+       - User Input → User Embedding
+       - Anime Input → Anime Embedding
+       - Dot Product → Flatten
+       - Dense → BatchNorm → Sigmoid Activation
+    - Output is a normalized score between 0 and 1, indicating the predicted user preference.
+    - Compiled using parameters from `config.yaml`:
+       - Loss: `binary_crossentropy`
+       - Optimizer: `adam`
+       - Metrics: `accuracy`
 
 ### 7. 🎯 Model Training  
-- Trained machine learning models using anime-user interaction data to capture preferences and generate recommendations.
-   - Implemented a **Collaborative Filtering** approach using cosine similarity on user-anime rating matrix.
-   - Preprocessed the interaction matrix by filling missing values with zeros and normalizing scores.
-   - Encoded anime and user IDs, then computed similarity-based embeddings.
-   - Evaluated recommendation quality using **RMSE** and cosine similarity metrics.
-   - Saved trained model artifacts and associated encoders for inference integration in the prediction pipeline.
+- Trained a deep learning-based collaborative filtering model to learn user and anime embeddings using Keras:
+    - 🧠 Model Architecture: Implemented a neural network using embedding layers for users and animes (BaseModel).
+    - 📥 Data Input: Loaded preprocessed user-anime interaction data using joblib.
+    - 🔁 Dynamic Learning Rate: Scheduled learning rate ramp-up and exponential decay for better convergence.
+    - ⛔ Early Stopping: Prevented overfitting by stopping early when validation loss didn’t improve.
+    - 💾 Checkpointing: Automatically saved the best weights using ModelCheckpoint.
+    - 📊 Loss Tracking: Tracked training and validation loss across epochs.
+    - 🔬 Evaluation: Evaluated model performance using final validation RMSE.
+- 🌐 Comet-ML Integration:
+    - Logged metrics like train/validation loss and final evaluation.
+    - Uploaded final model and learned embeddings as assets.
+    - Visualized training curves for monitoring.
+- 📁 Artifacts Saved:
+    - Final model (.h5)
+    - User and Anime embedding matrices (normalized)
+    - Training loss plot (PNG)
 
 ### 8. 📊 Experiment Tracking
 - Used **Comet-ML** for logging metrics, hyperparameters, and artifacts
