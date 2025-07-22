@@ -1,3 +1,12 @@
+![MLOps](https://img.shields.io/badge/MLOps-Enabled-blue)
+![Made With Python](https://img.shields.io/badge/Made%20with-Python%203.10-blue.svg)
+![Deployed on GCP](https://img.shields.io/badge/Deployed-GCP-ff69b4)
+![Comet ML](https://img.shields.io/badge/Experiment_Tracking-Comet--ML-orange)
+![DVC](https://img.shields.io/badge/Data_Versioning-DVC-purple)
+![CI/CD](https://img.shields.io/badge/CI/CD-Jenkins-yellow)
+![Status](https://img.shields.io/badge/status-Deployed-brightgreen)
+![Repo Size](https://img.shields.io/github/repo-size/aimldinesh/AniRec)
+![Last Commit](https://img.shields.io/github/last-commit/aimldinesh/AniRec)
 # 🎬 AniRec: Personalized Anime Recommendation System
 AniRec is a full-scale end-to-end **Anime Recommendation System** that combines content-based filtering, collaborative filtering, and hybrid techniques. This project demonstrates the power of **MLOps**, incorporating tools like **Comet-ML**, **DVC**, **Jenkins**, **Docker**, and **Kubernetes** to deliver a scalable, reproducible, and production-grade recommendation system.
 
