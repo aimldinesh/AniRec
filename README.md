@@ -56,14 +56,16 @@ graph TD
 ---
 
 ## 🚀 Key Features
-
-- 🔍 **Content-Based Filtering** using genres and synopsis embeddings
-- 👥 **Collaborative Filtering** using user-anime interaction embeddings
-- 🤝 **Hybrid Recommender** that combines both strategies
-- 📊 **Experiment Tracking** using **Comet-ML**
-- 📦 **Data and Model Versioning** using **DVC**
-- 🔧 **CI/CD Pipeline** using **Jenkins + Kubernetes**
-- 🌐 **Web App Interface** using **Flask**
+- 📥 **Automated Data Ingestion** from GCP buckets using Google Cloud Storage API
+- 🧠 **User-Based Collaborative Filtering** Leverages user embedding similarity to find users with similar anime preferences and recommends anime they rated highly (excluding already seen ones).
+- 📺 **Content-Based Filtering** Finds similar anime titles based on anime embeddings (e.g., genre, popularity) and recommends content structurally close to what the user has liked.
+- 🎯 **Hybrid Recommendation Engine** Combines **user-based collaborative filtering** and **content-based filtering** using weighted scoring logic. This improves personalization while mitigating cold-start problems.
+- 📊 **Experiment Tracking** using [Comet-ML](https://www.comet.com/) to monitor training, metrics, and hyperparameters  
+- 📦 **Data & Model Versioning** integrated with [DVC](https://dvc.org/) to ensure reproducibility and version control  
+- 🔁 **Modular ML Pipelines** including training, evaluation, and prediction modules for scalable development  
+- 🔧 **CI/CD Automation** using Jenkins & Kubernetes for containerized deployment and orchestration  
+- 🌐 **User-Friendly Web App** built with Flask that allows real-time anime recommendations  
+- 🛡️ **Robust Error Handling & Logging** across the pipeline using custom exceptions and centralized loggers
 
 ---
 
