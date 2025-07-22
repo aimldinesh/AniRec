@@ -11,6 +11,34 @@
 AniRec is a full-scale end-to-end **Anime Recommendation System** that combines content-based filtering, collaborative filtering, and hybrid techniques. This project demonstrates the power of **MLOps**, incorporating tools like **Comet-ML**, **DVC**, **Jenkins**, **Docker**, and **Kubernetes** to deliver a scalable, reproducible, and production-grade recommendation system.
 
 ---
+## 📑 Table of Contents
+
+* [🚀 Key Features](#-key-features)
+* [🧱 Project Architecture](#-project-architecture)
+* [🛠️ Project Workflow](#️-project-workflow)
+  * [1. 📦 Database Setup](#1--database-setup)
+  * [2. ⚙️ Project Setup](#2--project-setup)
+  * [3. 📥 Data Ingestion](#3--data-ingestion-via-gcp-bucket)
+  * [4. 📒 Jupyter Notebook Testing](#4--jupyter-notebook-testing)
+  * [5. 🧹 Data Processing](#5--data-processing)
+  * [6. 🧠 Model Architecture](#6--model-architecture)
+  * [7. 🎯 Model Training](#7--model-training)
+  * [8. 📊 Experiment Tracking](#8--experiment-tracking)
+  * [9. 🔁 Training Pipeline](#9--training-pipeline)
+  * [10. 📦 Data & Code Versioning](#10--data--code-versioning)
+  * [11. 🧩 Prediction Helper Functions](#11--prediction-helper-functions)
+  * [12. 🌐 User App with Prediction Pipeline](#12--user-app-with-prediction-pipeline)
+  * [13. 🚀 CI/CD Deployment](#13--cicd-deployment)
+* [🧰 Tech Stack](#-tech-stack)
+* [🧪 Local Setup Instructions](#-local-setup-instructions)
+* [🌐 Run with Docker](#-run-with-docker)
+* [📸 Project Screenshots](#-project-screenshots)
+* [📦 Future Improvements](#-future-improvements)
+* [📚 Datasets](#-datasets)
+* [📄 License](#-license)
+* [🤝 Contributors](#-contributors)
+
+---
 
 ## 🚀 Key Features
 
@@ -187,3 +215,14 @@ docker run -p 5000:5000 anirec-app
 - Use embeddings from models like BERT or Sentence Transformers.
 - Deploy with auto-scaling via GKE Ingress and HPA.
 
+---
+## 📚 Datasets
+* [Anime Data](https://www.kaggle.com/datasets/hernan4444/anime-recommendation-database-2020)
+
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🤝 Contributors
+- [Dinesh Chaudhary](https://github.com/your-github)
