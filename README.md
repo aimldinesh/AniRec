@@ -12,9 +12,9 @@ AniRec is a full-scale end-to-end **Anime Recommendation System** that combines 
 
 ---
 ## 📑 Table of Contents
-* [🧱 Project Architecture](#-project-architecture)
+* [🧱 Project Workflow](#-project-workflow)
 * [🚀 Key Features](#-key-features)
-* [🛠️ Project Workflow](#️-project-workflow)
+* [🛠️ Project Workflow Step by Step](#️-project-workflow-step-by-step)
   * [1. 📦 Database Setup](#1--database-setup)
   * [2. ⚙️ Project Setup](#2--project-setup)
   * [3. 📥 Data Ingestion](#3--data-ingestion-via-gcp-bucket)
@@ -38,7 +38,7 @@ AniRec is a full-scale end-to-end **Anime Recommendation System** that combines 
 * [🤝 Contributors](#-contributors)
 
 ---
-## 🧱 Project Architecture
+## 🧱 Project Workflow
 ```mermaid
 graph TD
     A[📂 Database Setup<br>GCP Bucket] --> B[⚙️ Project Setup]
@@ -67,7 +67,7 @@ graph TD
 
 ---
 
-## 🛠️ Project Workflow
+## 🛠️ Project Workflow Step by Step
 
 ### 1. 📦 Database Setup
 - Centralized dataset storage using **Google Cloud Storage (GCP Bucket)**
